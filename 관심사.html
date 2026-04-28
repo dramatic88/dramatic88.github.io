@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>index.html</title>
+
+	<script>
+
+var files = ["피슬.png",
+             "각청.jpg",
+             "감우.png",
+             "진.png",
+             "바바라.png",
+             "고양이1.jpg",
+             "고양이2.jpg",
+             "고양이3.jpg",
+             "고양이4.jpg"];
+var imgs = new Array();
+for(var i=0; i<files.length; i++) {
+	imgs[i] = new Image(); 
+	imgs[i].src = files[i]; 
+}
+
+
+var next = 1;
+function change(img) {
+	img.src = imgs[next].src; 
+	next++; 
+	next %= imgs.length; 
+}
+
+</script>
+
+<style>
+#menubar {
+	background : pink;
+	margin-top: 50px;
+	text-align: center;
+}
+#menubar ul { 
+	margin : 0;
+	padding : 0;
+}
+#menubar ul li {
+	display : inline-block; 
+	list-style-type : none; 
+	padding : 0px 50px;  
+}
+#menubar ul li a {
+	color : mediumvioletred;
+  	text-decoration : none; 
+
+}
+#menubar ul li a:hover {
+ 	color : white;  
+}
+
+</style>
+	</head>
+
+	<body>
+		
+		<header style = "height: 250px; margin-bottom: -50px; background: linear-gradient(to bottom, rgba(253, 131, 253, 0.74), rgba(255, 192, 203, 0.795)); text-align: center">
+		 
+		 	<img src="고양이4.jpg" style="text-align: center; border-radius: 100px; height: 175px;">
+            
+		<div style="text-align: center; color: #fff; text-shadow: 5px 3px 2px #222;font-size: 50px;">Hanjo Homepage</div>
+
+	</header>
+	
+	<nav id="menubar">
+
+	<ul>
+	    <li><a href="index.html">처음 화면</a></li>
+		<li><a href="소개.html">소개</a></li>
+		<li><a href="취미.html">취미</a></li>
+		<li><a href="전공.html">전공(HTML)</a></li>
+		<li><span style="color:blueviolet; font-weight:600">관심사</span></li>
+	</ul>
+
+</nav>
+
+    <div style = "text-align:center; float:left; font-family: Verdana, Arial, sans-serif; ">
+    <h2 style="font-size: 20px;">주로 애니메이션과 게임을 좋아하다 보니 <br><br>
+    애니메이션과 게임 캐릭터의 짤(사진)을 모으는 것이나 고양이 사진 수집에 관심이 많다.<br><br>
+    또한 마인크래프에도 관심이 있어 영상을 종종 찾아본다.<br><br>
+	(이미지를 클릭하면 다음 이미지를 보여주고 동영상은 재생버튼을 누르면 된다.)
+	<hr>
+    <img style="border:20px ridge lightpink;"
+	src="피슬.png" alt="."
+	width="450" height="450"
+	onclick="change(this)">
+	<video src="마크(악어 유튜브).mp4" width="1000" height="500" autoplay controls></video></div>
+	
+	</body>
+</html>
+
+
